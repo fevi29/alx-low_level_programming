@@ -22,7 +22,7 @@ i = flag = len = 0;
 while (str[i])
 {
 if (flag == 0 && str[i] != ' ')
-        flag = 1;
+flag = 1;
 if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
 {
 flag = 0;
