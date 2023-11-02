@@ -1,75 +1,19 @@
-#include "main.h"
-
+#include "notrebloh.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 
 /**
-* malloc_checked - cause normal process termination with a status value of 98
-*
-* @b: allocated memory
-*
-* Return: a pointer to the allocated memory
-*/
+ * *malloc_checked - allocate memory with malloc
+ * @b: unsigned int type
+ * Return: return pointer
+ */
 void *malloc_checked(unsigned int b)
 {
-   void *i;
+	int *ptr;
 
-
-   i = malloc(b);
-   if (i == NULL)
-       exit(98);
-   return (i);
-}
-
-
-
-
-======= 1-string_nconcat.c =======
-
-
-#include "main.h"
-
-
-/**
-* string_nconcat - a function that concatenates two strings.
-*
-* @s1: first char
-* @s2: secound char
-* @n: unsigned int
-*
-* Return: If the function fails, it should return NULL
-*/
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-{
-   unsigned int x, y, z;
-   char *s;
-
-
-   if (s1 == NULL)
-   {
-       x = 0;
-   }
-   else
-   {
-       for (x = 0; s1[x]; ++x)
-           ;
-   }
-   if (s2 == NULL)
-   {
-       y = 0;
-   }
-   else
-   {
-       for (y = 0; s2[y]; ++y)
-           ;
-   }
-   if (y > n)
-       y = n;
-   s = malloc(sizeof(char) * (x + y + 1));
-   if (s == NULL)
-       return (NULL);
-   for (z = 0; z < x; z++)
-       s[z] = s1[z];
-   for (z = 0; z < y; z++)
-       s[z + x] = s2[z];
-   s[x + y] = '\0';
-   return (s);
+	ptr = malloc(b);
+	if (ptr == NULL)
+		exit(98);
+	return (ptr);
 }
