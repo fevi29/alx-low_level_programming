@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- *_calloc - allocates memory for an array 
+ * _calloc - allocates memory for an array 
  *
  * @nmemb: no of bloc of memory
  * @size: size of the element (int)
