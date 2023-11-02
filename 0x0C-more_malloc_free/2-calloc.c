@@ -1,30 +1,24 @@
-#include "notrebloh.h"
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-
 /**
- * *_calloc - function to allocates memory
- * @nmemb: unsigned int type
- * @size: unsigned int type
- * Return: return pointer to array
+ *_calloc - allocates memory for an array 
+ *
+ * @nmemb: no of bloc of memory
+ * @size: size of the element (int)
+ *
+ * Return: void pointer
  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+void * _calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
-	unsigned int count;
+   char *p;
+   size_t i;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-	count = 0;
-	while (count < nmemb * size)
-	{
-		ptr[count] = 0;
-		count++;
-	}
-	return (ptr);
+   if (nmemb == 0 || size == 0)
+       return (NULL);
+   p = malloc(nmemb * size);
+   if (p == NULL)
+       return (NULL);
+   for (i = 0; i < (nmemb * size); i++)
+       p[i] = 0;
+   return (p);
 }
