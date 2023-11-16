@@ -1,23 +1,25 @@
 #include <stdio.h>
-#include "sort.h"
+#include "lists.h"
 
 /**
- * print_list - Prints a list of integers
+ * print_list - prints all the elements of a linked list
+ * @h: pointer to the list_t list to print
  *
- * @list: The list to be printed
+ * Return: the number of nodes printed
  */
-void print_list(const listint_t *list)
+size_t print_list(const list_t *h)
 {
-	int i;
+	size_t s = 0;
 
-	i = 0;
-	while (list)
+	while (h)
 	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", list->n);
-		++i;
-		list = list->next;
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
+		s++;
 	}
-	printf("\n");
+
+	return (s);
 }
